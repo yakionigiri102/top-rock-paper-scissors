@@ -1,9 +1,8 @@
-// ROCK PAPER SCISSOR GAME
-
+// ROCK PAPER SCISSORS GAME
 //***********Main***********//
 
 // Declare variable 
-const choices = ["rock", "paper", "scissor"];
+const choices = ["rock", "paper", "scissors"];
 let humanScore = 0;
 let computerScore = 0;
 
@@ -14,23 +13,24 @@ playGame();
 
 //***********Main***********//
 
-
     // Get random choice for computer
 function getComputerChoice(){
     let computerChoice = choices[Math.floor(Math.random() * 3)];
     return computerChoice;
 }
 
+
     // Get input from user
 function getHumanChoice(){
-    let humanChoice = prompt("Input your choice (Rock, Paper, or Scissor)").toLowerCase();
+    let humanChoice = prompt("Input your choice (Rock, Paper, or scissors)").toLowerCase();
     let check = validateInput(humanChoice);
     while(!check){
-        humanChoice = prompt(`Invalid input. Try again! (Type "Rock", "Paper", or "Scissor")`).toLowerCase();
+        humanChoice = prompt(`Invalid input. Try again! (Type "Rock", "Paper", or "scissors")`).toLowerCase();
         check = validateInput(humanChoice)
     }
     return humanChoice;
 }
+
 
 function validateInput(choice){
     if(choices.includes(choice)){
@@ -40,15 +40,17 @@ function validateInput(choice){
         return false;
     }
 }
+
+
 function playRound(humanChoice, computerChoice){
     // Tie condition
     if(humanChoice == computerChoice){
         console.log("It's a tie !");
     }
     // Player win condition
-    else if((humanChoice == "rock" && computerChoice == "scissor")
+    else if((humanChoice == "rock" && computerChoice == "scissors")
           ||(humanChoice == "paper"  && computerChoice == "rock")
-          ||(humanChoice == "scissor"  && computerChoice == "paper")){
+          ||(humanChoice == "scissors"  && computerChoice == "paper")){
             console.log("You won this round!");
             humanScore++;
         }
@@ -58,6 +60,7 @@ function playRound(humanChoice, computerChoice){
         console.log("Computer won this round!");
     }
 }
+
 
 function playGame(){
     for(let i = 0; i < 5; i++){
@@ -82,7 +85,3 @@ function playGame(){
         console.log("Computer won this Game. So fun playing with you")
     }
 }
-
-
-
-
