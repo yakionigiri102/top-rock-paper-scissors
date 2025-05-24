@@ -1,17 +1,13 @@
 // ROCK PAPER SCISSORS GAME
-//***********Main***********//
-
 // Declare variable 
 const choices = ["rock", "paper", "scissors"];
 let humanScore = 0;
 let computerScore = 0;
-
-// Display beginning scores
-console.log("Player: " + humanScore,"|", "Computer: " + computerScore)
-// Game Start
-playGame();
-
-//***********Main***********//
+const displayHumanScore = document.getElementById("displayHumanScore");
+const displayComputerScore = document.getElementById("displayComputerScore");
+const displayHumanChoice = document.getElementById("displayHumanChoice");
+const displayComputerChoice = document.getElementById("displayComputerChoice");
+const displayResult = document.getElementById("displayResult");
 
     // Get random choice for computer
 function getComputerChoice(){
@@ -20,68 +16,53 @@ function getComputerChoice(){
 }
 
 
-    // Get input from user
-function getHumanChoice(){
-    let humanChoice = prompt("Input your choice (Rock, Paper, or scissors)").toLowerCase();
-    let check = validateInput(humanChoice);
-    while(!check){
-        humanChoice = prompt(`Invalid input. Try again! (Type "Rock", "Paper", or "scissors")`).toLowerCase();
-        check = validateInput(humanChoice)
-    }
-    return humanChoice;
-}
-
-
-function validateInput(choice){
-    if(choices.includes(choice)){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
-
-
-function playRound(humanChoice, computerChoice){
+function playRound(humanChoice){
     // Tie condition
+    let computerChoice = getComputerChoice();
     if(humanChoice == computerChoice){
-        console.log("It's a tie !");
+        displayResult.textContent = "It's a tie !";
     }
     // Player win condition
     else if((humanChoice == "rock" && computerChoice == "scissors")
-          ||(humanChoice == "paper"  && computerChoice == "rock")
-          ||(humanChoice == "scissors"  && computerChoice == "paper")){
-            console.log("You won this round!");
-            humanScore++;
-        }
-        // Computer win condition
+        ||(humanChoice == "paper"  && computerChoice == "rock")
+    ||(humanChoice == "scissors"  && computerChoice == "paper"))
+    {
+        humanScore++;
+        displayResult.textContent= "You won this round!";
+    }
+    // Computer win condition
     else{
         computerScore++;
-        console.log("Computer won this round!");
+        displayResult.textContent= "Computer won this round!";
     }
+    // Display choice
+    displayHumanChoice.textContent = `Player: ${humanChoice}`;
+    displayComputerChoice.textContent = `Computer: ${computerChoice}`;
+
+    // Display scores
+    displayHumanScore.textContent = `Player: ${humanScore}`;
+    displayComputerScore.textContent = `Computer: ${computerScore}`;
+    resetGame();
 }
 
 
-function playGame(){
-    for(let i = 0; i < 5; i++){
-        let humanChoice = getHumanChoice();
-        let computerChoice = getComputerChoice();
-        playRound(humanChoice, computerChoice);
-        console.log("Player: " + humanChoice,"|", "Computer: " + computerChoice)
-    }
-    // Display final scores
-    console.log("Player: " + humanScore,"|", "Computer: " + computerScore)
+function resetGame(){
     // Winner message
-        // Tie Game
-    if(humanScore == computerScore){
-        console.log("Crazy!!! It's a tie game. So fun to play with you")
-    }
         // Player won the game
-    else if(humanScore > computerScore){
-        console.log("Congratulation!!! You won this Game. So fun playing with you")
+    if(humanScore >= 5){
+        displayResult.textContent= "Congratulation!!! You won this Game.";
+        // Reset Score for new game
+        humanScore = 0;
+        computerScore = 0;
+        alert("GAME OVER!");
     }
         // Computer won the game
-    else{
-        console.log("Computer won this Game. So fun playing with you")
+    else if(computerScore >= 5){
+        displayResult.textContent= "Computer won this Game.";
+        // Reset Score for new game
+        humanScore = 0;
+        computerScore = 0;
+        alert("GAME OVER!");
     }
+
 }

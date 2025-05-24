@@ -1,0 +1,48 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+h1{
+    text-align: center;
+    color: tomato;
+    font-size: 32pt;
+    font-weight: bold;
+}
+
+#displayResult{
+    font-size: 24pt;
+    color: blue;
+    text-align: center;
+    padding: 32px;
+}
+
+p{
+    text-align: center;
+    font-size: 32pt;
+}
+
+.choices{
+    font-size: 24pt;
+    margin: 0 640px;
+    text-align: center;
+}
+
+
+#myButton{
+    color: rgb(244, 31, 244);
+    font-size: 7.5rem;
+    cursor: pointer;
+    border-radius: 10%;
+    min-width: 160px;
+    margin-bottom: 60px;
+    border:rgb(239, 27, 239);
+}
+
+#myButton:hover{
+    border: 3px solid rgb(244, 6, 244);
+}
