@@ -15,8 +15,9 @@ h1{
 }
 
 #displayResult{
-    font-size: 24pt;
-    color: blue;
+    font-size: 36pt;
+    font-weight: bold;
+    color: rgb(233, 13, 130);
     text-align: center;
     padding: 32px;
 }
@@ -27,11 +28,27 @@ p{
 }
 
 .choices{
-    font-size: 24pt;
+    font-size: 32pt;
     margin: 0 640px;
     text-align: center;
 }
+.displayScore{
+    border:solid black;
+    border-radius: 1rem;
+    padding: 1rem;
+}
 
+#displayHumanChoice,
+#displayHumanScore{
+    color: green;
+    font-size: 32pt;
+}
+
+#displayComputerChoice,
+#displayComputerScore{
+    color: blue;
+    font-size: 32pt;
+}
 
 button{
     color: rgb(244, 31, 244);

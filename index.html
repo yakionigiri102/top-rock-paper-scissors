@@ -12,23 +12,25 @@
     <p>Choice your move!</p>
     
     <div class="choices">
-        <button id="myButton" onclick="playRound('rock')">👊</button>
-        <button id="myButton" onclick="playRound('paper')">🤚</button>
-        <button id="myButton" onclick="playRound('scissors')">✌️</button>
+        <button id="pickedRock">👊</button>
+        <button id="pickedPaper">🤚</button>
+        <button id="pickedScissors">✌️</button>
     </div>
     
     <div id="displayHumanChoice">Player: </div>
     
     <div id="displayComputerChoice">Computer: </div>
     
-    <div id="displayResult">It's a tie</div>
+    <div id="displayResult">Let's play !</div>
     
-    <div id="displayHumanScore">Human's Score: 
-        <span>0</span>
-    </div>
-    
-    <div id="displayComputerScore">Computer's Score: 
-        <span>0</span>
+    <div class="displayScore">
+        <div id="displayHumanScore">Player's Score: 
+            <span>0</span>
+        </div>
+        
+        <div id="displayComputerScore">Computer's Score: 
+            <span>0</span>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>

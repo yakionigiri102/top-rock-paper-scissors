@@ -30,6 +30,7 @@ pickedScissors.addEventListener("click", event =>{
     // Get random choice for computer
 function getComputerChoice(){
     let computerChoice = choices[Math.floor(Math.random() * 3)];
+    console.log(computerChoice);
     return computerChoice;
 }
 
@@ -38,7 +39,7 @@ function playRound(humanChoice){
     // Tie condition
     let computerChoice = getComputerChoice();
     if(humanChoice == computerChoice){
-        displayResult.textContent = "It's a tie !";
+        displayResult.textContent = "It's a tie!";
     }
     // Player win condition
     else if((humanChoice == "rock" && computerChoice == "scissors")
@@ -58,8 +59,8 @@ function playRound(humanChoice){
     displayComputerChoice.textContent = `Computer: ${computerChoice}`;
 
     // Display scores
-    displayHumanScore.textContent = `Player: ${humanScore}`;
-    displayComputerScore.textContent = `Computer: ${computerScore}`;
+    displayHumanScore.textContent = `Player's Score: ${humanScore}`;
+    displayComputerScore.textContent = `Computer's Score: ${computerScore}`;
     resetGame();
 }
 
@@ -72,7 +73,7 @@ function resetGame(){
         // Reset Score for new game
         humanScore = 0;
         computerScore = 0;
-        alert("GAME OVER!");
+        alert("YOU ARE THE WINNER!");
     }
         // Computer won the game
     else if(computerScore >= 5){
