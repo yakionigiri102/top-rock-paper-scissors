@@ -33,7 +33,7 @@ p{
 }
 
 
-#myButton{
+button{
     color: rgb(244, 31, 244);
     font-size: 7.5rem;
     cursor: pointer;
@@ -43,6 +43,6 @@ p{
     border:rgb(239, 27, 239);
 }
 
-#myButton:hover{
+button:hover{
     border: 3px solid rgb(244, 6, 244);
 }

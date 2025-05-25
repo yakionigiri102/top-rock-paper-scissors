@@ -8,6 +8,24 @@ const displayComputerScore = document.getElementById("displayComputerScore");
 const displayHumanChoice = document.getElementById("displayHumanChoice");
 const displayComputerChoice = document.getElementById("displayComputerChoice");
 const displayResult = document.getElementById("displayResult");
+const pickedRock = document.getElementById("pickedRock");
+const pickedPaper = document.getElementById("pickedPaper");
+const pickedScissors = document.getElementById("pickedScissors");
+
+
+    // Get choice for player
+pickedRock.addEventListener("click", event =>{
+    playRound("rock");
+});
+
+pickedPaper.addEventListener("click", event =>{
+    playRound("paper");
+});
+
+pickedScissors.addEventListener("click", event =>{
+    playRound("scissors");
+});
+
 
     // Get random choice for computer
 function getComputerChoice(){
@@ -64,5 +82,4 @@ function resetGame(){
         computerScore = 0;
         alert("GAME OVER!");
     }
-
 }
