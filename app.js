@@ -11,26 +11,19 @@ const displayResult = document.getElementById("displayResult");
 const pickedRock = document.getElementById("pickedRock");
 const pickedPaper = document.getElementById("pickedPaper");
 const pickedScissors = document.getElementById("pickedScissors");
-
+const choiceButtons = document.querySelectorAll("button");
 
     // Get choice for player
-pickedRock.addEventListener("click", event =>{
-    playRound("rock");
-});
-
-pickedPaper.addEventListener("click", event =>{
-    playRound("paper");
-});
-
-pickedScissors.addEventListener("click", event =>{
-    playRound("scissors");
-});
+choiceButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        playRound(button.id);
+    });
+})
 
 
     // Get random choice for computer
 function getComputerChoice(){
     let computerChoice = choices[Math.floor(Math.random() * 3)];
-    console.log(computerChoice);
     return computerChoice;
 }
 
